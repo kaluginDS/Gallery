@@ -63,6 +63,7 @@ class AlbumCell: UITableViewCell {
 
   private func makeAlbumTitleLabel() -> UILabel {
     let label = UILabel()
+    label.textColor = Config.Grid.ArrowButton.tintColor
     label.numberOfLines = 1
     label.font = Config.Font.Text.regular.withSize(14)
 
@@ -71,6 +72,7 @@ class AlbumCell: UITableViewCell {
 
   private func makeItemCountLabel() -> UILabel {
     let label = UILabel()
+    label.textColor = Config.Grid.ArrowButton.tintColor
     label.numberOfLines = 1
     label.font = Config.Font.Text.regular.withSize(10)
 
