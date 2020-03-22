@@ -8,7 +8,7 @@ class PageIndicator: UIView {
 
   let items: [String]
   var buttons: [UIButton]!
-  lazy var indicator: UIImageView = self.makeIndicator()
+  lazy var indicator: UIView = self.makeIndicator()
   weak var delegate: PageIndicatorDelegate?
 
   // MARK: - Initialization
@@ -79,10 +79,10 @@ class PageIndicator: UIView {
     return button
   }
 
-  func makeIndicator() -> UIImageView {
-    let imageView = UIImageView(image: GalleryBundle.image("gallery_page_indicator"))
+  func makeIndicator() -> UIView {
+    let view = Indicator()
 
-    return imageView
+    return view
   }
 
   // MARK: - Action
@@ -116,4 +116,25 @@ class PageIndicator: UIView {
   func buttonFont(_ selected: Bool) -> UIFont {
     return selected ? Config.Font.Main.bold.withSize(14) : Config.Font.Main.regular.withSize(14)
   }
+}
+
+class Indicator: UIView {
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        
+        backgroundColor = .clear
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func draw(_ rect: CGRect) {
+        super.draw(rect)
+        
+        let path = UIBezierPath(roundedRect: rect, byRoundingCorners: [.topLeft, .topRight], cornerRadii: CGSize(width: rect.width / 1.5, height: rect.width / 1.5))
+        Config.PageIndicator.textColor.setFill()
+        path.fill()
+    }
 }

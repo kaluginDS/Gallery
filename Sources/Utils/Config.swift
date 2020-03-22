@@ -55,6 +55,14 @@ public struct Config {
   }
 
   public struct Grid {
+    
+    public struct CollectionView {
+        public static var backgroundColor: UIColor = .white
+    }
+    
+    public struct TopView {
+        public static var backgroundColor: UIColor = .white
+    }
 
     public struct CloseButton {
       public static var tintColor: UIColor = UIColor(red: 109/255, green: 107/255, blue: 132/255, alpha: 1)

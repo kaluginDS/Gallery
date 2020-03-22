@@ -94,6 +94,7 @@ public class GalleryController: UIViewController, PermissionControllerDelegate {
 
     let controller = PagesController(controllers: controllers)
     controller.selectedIndex = tabsToShow.firstIndex(of: Config.initialTab ?? .cameraTab) ?? 0
+    controller.view.backgroundColor = Config.PageIndicator.backgroundColor
 
     return controller
   }
