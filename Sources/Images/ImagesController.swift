@@ -36,7 +36,7 @@ class ImagesController: UIViewController {
   // MARK: - Setup
 
   func setup() {
-    view.backgroundColor = UIColor.white
+    view.backgroundColor = Config.Grid.CollectionView.backgroundColor
 
     view.addSubview(gridView)
 
