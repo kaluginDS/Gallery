@@ -19,6 +19,7 @@ class ViewController: UIViewController {
         Config.Grid.FrameView.borderColor = .red
         Config.PageIndicator.backgroundColor = .red
         Config.Grid.CloseButton.tintColor = .yellow
+        Config.Permission.backgroundColor = .red
         
         let vc = GalleryController()
         vc.delegate = self

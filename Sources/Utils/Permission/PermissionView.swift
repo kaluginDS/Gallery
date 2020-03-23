@@ -24,6 +24,8 @@ class PermissionView: UIView {
   // MARK: - Setup
 
   func setup() {
+    backgroundColor = Config.Permission.backgroundColor
+    
     [label, settingButton, closeButton, imageView].forEach {
       addSubview($0)
     }
